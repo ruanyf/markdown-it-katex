@@ -20,14 +20,14 @@ npm install markdown-it
 Install the plugin
 
 ```
-npm install markdown-it-katex
+npm install @iktakahiro/markdown-it-katex
 ```
 
 Use it in your javascript
 
 ```javascript
 var md = require('markdown-it')(),
-    mk = require('markdown-it-katex');
+    mk = require('@iktakahiro/markdown-it-katex');
 
 md.use(mk);
 
