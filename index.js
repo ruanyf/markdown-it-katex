@@ -174,7 +174,7 @@ module.exports = function math_plugin(md, options) {
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return `<span class='katex-error' title='${escapeHtml(error)}'>${escapeHtml(latex)}</span>`;
+            return `<span class='katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</span>`;
         }
     };
 
@@ -189,7 +189,7 @@ module.exports = function math_plugin(md, options) {
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return `<p class='katex-block katex-error' title='${escapeHtml(error)}'>${escapeHtml(latex)}</p>`;
+            return `<p class='katex-block katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
         }
     }
 
