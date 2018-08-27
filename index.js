@@ -152,6 +152,15 @@ function math_block(state, start, end, silent){
     return true;
 }
 
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 module.exports = function math_plugin(md, options) {
     // Default options
 
@@ -165,7 +174,7 @@ module.exports = function math_plugin(md, options) {
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return latex;
+            return `<span class='katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</span>`;
         }
     };
 
@@ -176,11 +185,11 @@ module.exports = function math_plugin(md, options) {
     var katexBlock = function(latex){
         options.displayMode = true;
         try{
-            return "<p>" + katex.renderToString(latex, options) + "</p>";
+            return "<p class='katex-block'>" + katex.renderToString(latex, options) + "</p>";
         }
         catch(error){
             if(options.throwOnError){ console.log(error); }
-            return latex;
+            return `<p class='katex-block katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
         }
     }
 
