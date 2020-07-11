@@ -90,4 +90,4 @@ Math parsing in markdown is designed to agree with the conventions set by pandoc
 KaTeX is based on TeX and LaTeX. Support for both is growing. Here's a list of
 currently supported functions:
 
-[Function Support in KaTeX](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX)
+[Things that KaTeX does not (yet) support](https://github.com/KaTeX/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support)
