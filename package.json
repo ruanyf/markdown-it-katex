@@ -27,6 +27,6 @@
     "devDependencies": {
         "markdown-it": "11.0.0",
         "markdown-it-testgen": "0.1.6",
-        "tape": "^4.9.0"
+        "tape": "5.0.1"
     }
 }
