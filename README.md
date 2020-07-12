@@ -36,12 +36,12 @@ var result = md.render('# Math Rulez! \n  $\\sqrt{3x-1}+(1+x)^2$');
 
 Include the KaTeX stylesheet in your html:
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
 ```
 
 If you're using the default markdown-it parser, I also recommend the [github stylesheet](https://github.com/sindresorhus/github-markdown-css):
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
 ```
 
 `KaTeX` options can be supplied with the second argument to use.
@@ -90,4 +90,4 @@ Math parsing in markdown is designed to agree with the conventions set by pandoc
 KaTeX is based on TeX and LaTeX. Support for both is growing. Here's a list of
 currently supported functions:
 
-[Function Support in KaTeX](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX)
+[Things that KaTeX does not (yet) support](https://github.com/KaTeX/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support)
