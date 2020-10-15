@@ -11,14 +11,16 @@ Need convincing?
 * Check out the comparative benchmark: [KaTeX vs MathJax](https://jsperf.com/katex-vs-mathjax/42)
 
 ## Usage
+
 Install markdown-it
-```
+
+```bash
 npm install markdown-it
 ```
 
 Install the plugin
 
-```
+```bash
 npm install @iktakahiro/markdown-it-katex
 ```
 
@@ -35,16 +37,19 @@ var result = md.render('# Math Rulez! \n  $\\sqrt{3x-1}+(1+x)^2$');
 ```
 
 Include the KaTeX stylesheet in your html:
+
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
 ```
 
 If you're using the default markdown-it parser, I also recommend the [github stylesheet](https://github.com/sindresorhus/github-markdown-css):
+
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
 ```
 
 `KaTeX` options can be supplied with the second argument to use.
+
 ```javascript
 md.use(mk, {"throwOnError" : false, "errorColor" : " #cc0000"});
 ```
@@ -52,16 +57,19 @@ md.use(mk, {"throwOnError" : false, "errorColor" : " #cc0000"});
 ## Examples
 
 ### Inline
+
 Surround your LaTeX with a single `$` on each side for inline rendering.
-```
+
+```latex
 $\sqrt{3x-1}+(1+x)^2$
 ```
 
 ### Block
+
 Use two (`$$`) for block rendering. This mode uses bigger symbols and centers
 the result.
 
-```
+```latex
 $$\begin{array}{c}
 
 \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
