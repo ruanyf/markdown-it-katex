@@ -15,9 +15,10 @@
         "test": "npm run build && node test/all.js",
         "prepublishOnly": "npm run build"
     },
+    "homepage": "https://github.com/ruanyf/markdown-it-katex",
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com:iktakahiro/markdown-it-katex.git"
+        "url": "git+ssh://git@github.com:ruanyf/markdown-it-katex.git"
     },
     "keywords": [
         "markdown",
