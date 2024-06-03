@@ -1,7 +1,3 @@
-'use strict';
-
-var katex = require('katex');
-
 /* Process inline math */
 /*
 Like markdown-it-simplemath, this is a stripped down, simplified version of:
@@ -11,6 +7,10 @@ It differs in that it takes (a subset of) LaTeX as input and relies on KaTeX
 for rendering output.
 */
 
+/*jslint node: true */
+'use strict';
+
+import katex from 'katex';
 
 // Test if potential opening or closing delimieter
 // Assumes that there is a "$" at state.src[pos]
@@ -40,7 +40,7 @@ function isValidDelim(state, pos) {
 }
 
 function math_inline(state, silent) {
-    var start, match, token, res, pos;
+    var start, match, token, res, pos, esc_count;
 
     if (state.src[state.pos] !== "$") { return false; }
 
@@ -103,7 +103,7 @@ function math_inline(state, silent) {
 function math_block(state, start, end, silent){
     var firstLine, lastLine, next, lastPos, found = false, token,
         pos = state.bMarks[start] + state.tShift[start],
-        max = state.eMarks[start];
+        max = state.eMarks[start]
 
     if(pos + 2 > max){ return false; }
     if(state.src.slice(pos,pos+2)!=='$$'){ return false; }
@@ -191,11 +191,11 @@ function math_plugin(md, options) {
             if(options.throwOnError){ console.log(error); }
             return `<p class='katex-block katex-error' title='${escapeHtml(error.toString())}'>${escapeHtml(latex)}</p>`;
         }
-    };
+    }
 
     var blockRenderer = function(tokens, idx){
         return  katexBlock(tokens[idx].content) + '\n';
-    };
+    }
 
     md.inline.ruler.after('escape', 'math_inline', math_inline);
     md.block.ruler.after('blockquote', 'math_block', math_block, {
@@ -203,6 +203,7 @@ function math_plugin(md, options) {
     });
     md.renderer.rules.math_inline = inlineRenderer;
     md.renderer.rules.math_block = blockRenderer;
-}
+};
 
-module.exports = math_plugin;
+export default math_plugin;
+

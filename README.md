@@ -1,16 +1,12 @@
+This plugin is forked from [@iktakahiro/markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex), adding ESM support and updating dependencies.
+
 # markdown-it-katex
 
 Add Math to your Markdown
 
-[![Build Status](https://travis-ci.org/iktakahiro/markdown-it-katex.svg?branch=master)](https://travis-ci.org/iktakahiro/markdown-it-katex)
-
 [KaTeX](https://github.com/Khan/KaTeX) is a faster alternative to MathJax. This plugin makes it easy to support in your markdown.
 
-Need convincing?
-
-* Check out the comparative benchmark: [KaTeX vs MathJax](https://jsperf.com/katex-vs-mathjax/42)
-
-## Usage
+## Install
 
 Install markdown-it
 
@@ -21,14 +17,30 @@ npm install markdown-it
 Install the plugin
 
 ```bash
-npm install @iktakahiro/markdown-it-katex
+npm install @ruanyf/markdown-it-katex
 ```
 
-Use it in your javascript
+## Usage
+
+Load it in ES module.
+
+```javascript
+import markdownit from 'markdown-it';
+import mk from '@ruanyf/markdown-it-katex';
+
+const md = markdownit();
+
+md.use(mk);
+
+// double backslash is required for javascript strings, but not html input
+var result = md.render('# Math Rulez! \n  $\\sqrt{3x-1}+(1+x)^2$');
+```
+
+Or load it in CommonJS module.
 
 ```javascript
 var md = require('markdown-it')(),
-    mk = require('@iktakahiro/markdown-it-katex');
+    mk = require('@ruanyf/markdown-it-katex');
 
 md.use(mk);
 

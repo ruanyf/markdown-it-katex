@@ -1,11 +1,19 @@
 {
-    "name": "@iktakahiro/markdown-it-katex",
+    "name": "@ruanyf/markdown-it-katex",
     "version": "4.0.1",
     "description": "Fast math support for markdown-it with KaTeX",
     "main": "index.js",
+    "exports": {
+      ".": {
+        "import": "./index.mjs",
+        "require": "./index.js"
+      }
+    },
     "scripts": {
+        "build": "rollup --config rollup.config.mjs",
         "watch": "watchify browser.js -o bundle.js -v",
-        "test": "node test/all.js"
+        "test": "npm run build && node test/all.js",
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",
@@ -27,6 +35,7 @@
     "devDependencies": {
         "markdown-it": "latest",
         "markdown-it-testgen": "0.1.6",
+        "rollup": "^4.18.0",
         "tape": "5.x"
     }
 }
