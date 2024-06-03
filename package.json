@@ -1,13 +1,13 @@
 {
     "name": "@ruanyf/markdown-it-katex",
-    "version": "4.0.1",
+    "version": "5.0.0",
     "description": "Fast math support for markdown-it with KaTeX",
     "main": "index.js",
     "exports": {
-      ".": {
-        "import": "./index.mjs",
-        "require": "./index.js"
-      }
+        ".": {
+            "import": "./index.mjs",
+            "require": "./index.js"
+        }
     },
     "scripts": {
         "build": "rollup --config rollup.config.mjs",
