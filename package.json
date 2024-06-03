@@ -22,11 +22,11 @@
     "author": "Takahiro Ethan Ikeuchi @iktakahiro",
     "license": "MIT",
     "dependencies": {
-        "katex": "^0.12.0"
+        "katex": "latest"
     },
     "devDependencies": {
-        "markdown-it": "11.0.0",
+        "markdown-it": "latest",
         "markdown-it-testgen": "0.1.6",
-        "tape": "5.0.1"
+        "tape": "5.x"
     }
 }
